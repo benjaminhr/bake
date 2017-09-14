@@ -68,7 +68,6 @@ case "$2" in
   touch main.js
   ;;
 
-  # how would I echo the ruby output
   "ruby")
     echo 'require "sinatra"
 
@@ -77,6 +76,7 @@ get "/" do
 end
     ' > app.rb
 
+    # how would I echo the ruby output  
     gem install sinatra
     gem install thin
     ruby app.rb
