@@ -1,4 +1,4 @@
-# Bake - Ben Makes
+## Bake - Ben Makes
 
 - Purpose: Changes directory to your `dev` folder located in your home folder, and creates a project.
 - Usage:
