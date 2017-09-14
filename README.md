@@ -1,4 +1,4 @@
-# Project Setup
+### Make.sh
 
 - Purpose: Changes directory to your ```dev``` folder located in your home folder, and creates a project.
 - Usage:
