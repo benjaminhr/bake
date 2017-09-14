@@ -8,12 +8,11 @@ Error () {
   exit 1
 }
 
-cd ~/dev
+# idk how to put this into the case such that it fits in with line 34
 dirname=$1
-mkdir $dirname 2>&1 >/dev/null || Error "Fuck"
-cd $dirname
 
-case "$2" in
+case "$1" in
+  # thanks to matti
   "install")
     dir=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
     target=/usr/local/bin/bake
@@ -28,9 +27,27 @@ case "$2" in
   ;;
 
   "update")
-    git pull
+    git fetch origin
+    git reset --hard origin/master
   ;;
 
+  "$dirname")
+    cd ~/dev
+    mkdir $dirname 2>&1 >/dev/null || Error "Fuck"
+    cd $dirname
+  ;;
+
+  *)
+    echo " bake
+  install         - places in /usr/local/bin
+  frontend        - creates HTML/CSS/JS project
+  ruby            - creates basic sinatra webapp
+    "
+      exit 1
+    ;;
+esac
+
+case "$2" in
   "frontend")
     echo '<!DOCTYPE html>
 <html lang="en">
@@ -51,6 +68,7 @@ case "$2" in
   touch main.js
   ;;
 
+  # how would I echo the ruby output
   "ruby")
     echo 'require "sinatra"
 
@@ -64,12 +82,4 @@ end
     ruby app.rb
   ;;
 
-  *)
-    echo " bake
-  install         - places in /usr/local/bin
-  frontend        - creates HTML/CSS/JS project
-  ruby            - creates basic sinatra webapp
-    "
-      exit 1
-    ;;
   esac
