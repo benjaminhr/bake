@@ -26,10 +26,10 @@ case "$1" in
     fi
   ;;
 
-  "update")
-    git fetch origin
-    git reset --hard origin/master
-  ;;
+  # this probably won't work as script is in /usr/local/bin
+  # "update")
+  #   git pull
+  # ;;
 
   "$dirname")
     cd ~/dev
