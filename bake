@@ -39,8 +39,10 @@ case "$1" in
   *)
     echo " bake
   install         - places in /usr/local/bin
+  update
   frontend        - creates HTML/CSS/JS project
   ruby            - creates basic sinatra webapp
+  ruby-frontend   - creates basic sinatra with erb view
     "
       exit 1
     ;;
