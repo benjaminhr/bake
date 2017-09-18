@@ -30,13 +30,7 @@ case "$1" in
     git pull
   ;;
 
-  "$dirname")
-    cd ~/dev
-    mkdir $dirname 2>&1 >/dev/null || Error "Fuck"
-    cd $dirname
-  ;;
-
-  *)
+  "help")
     echo " bake
   install         - places in /usr/local/bin
   update
@@ -46,6 +40,12 @@ case "$1" in
     "
       exit 1
     ;;
+
+  "$dirname")
+    cd ~/dev
+    mkdir $dirname 2>&1 >/dev/null || Error "Fuck"
+    cd $dirname
+  ;;
 esac
 
 case "$2" in
