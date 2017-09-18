@@ -24,15 +24,18 @@ case "$1" in
       echo "Already exists in $target"
       exit 1
     fi
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
 
   "update")
     git pull
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
 
   "remove")
     cd /usr/local/bin
     rm -rf bake
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
     exit 1
   ;;
 
@@ -50,7 +53,7 @@ case "$1" in
 
   "$dirname")
     cd ~/dev
-    mkdir $dirname 2>&1 >/dev/null || Error "Fuck"
+    mkdir $dirname 2>/dev/null || Error "the directory already exists"
     cd $dirname
   ;;
 esac
@@ -74,6 +77,7 @@ case "$2" in
 
   touch main.css
   touch main.js
+  echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
 
   "ruby")
@@ -87,7 +91,7 @@ end
     # how would I echo the ruby output
     gem install sinatra
     gem install thin
-    ruby app.rb
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
 
   "ruby-frontend")
@@ -111,6 +115,6 @@ end
   <h1>bonjour</h1>
 </body>
 </html>' > index.erb
+  echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
-
   esac
