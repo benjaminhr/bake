@@ -87,7 +87,7 @@ end
     echo 'require "sinatra"
 
 get "/" do
-  erb :"index.html"
+  erb :index
 end
     ' > app.rb
 
