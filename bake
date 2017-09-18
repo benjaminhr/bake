@@ -30,10 +30,17 @@ case "$1" in
     git pull
   ;;
 
+  "remove")
+    cd /usr/local/bin
+    rm -rf bake
+    exit 1
+  ;;
+
   "help")
     echo " bake
   install         - places in /usr/local/bin
   update
+  remove	  - removes from /usr/local/bin
   frontend        - creates HTML/CSS/JS project
   ruby            - creates basic sinatra webapp
   ruby-frontend   - creates basic sinatra with erb view
