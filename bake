@@ -98,7 +98,7 @@ get "/" do
 end
     ' > app.rb
 
-    mkdir assets && cd assets
+    mkdir views && cd views
     echo '<!DOCTYPE html>
 <html lang="en">
 <head>
