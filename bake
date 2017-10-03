@@ -24,7 +24,10 @@ case "$1" in
   ;;
 
   "update")
+    rm /usr/local/bin/bake
+    cd ~/dev/shell
     git pull
+    cp ~/dev/shell/bake /usr/local/bin
     echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
 
