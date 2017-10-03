@@ -32,8 +32,7 @@ case "$1" in
   ;;
 
   "remove")
-    cd /usr/local/bin
-    rm -rf bake
+    rm /usr/local/bin/bake
     echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
     exit 1
   ;;
@@ -46,13 +45,14 @@ case "$1" in
   frontend        - creates HTML/CSS/JS project
   ruby            - creates basic sinatra webapp
   ruby-frontend   - creates basic sinatra with erb view
+  node            - creates basic node/express app
     "
       exit 1
     ;;
 
   "$dirname")
     cd ~/dev
-    mkdir $dirname 2>/dev/null || Error "the directory already exists"
+    mkdir $dirname 2>/dev/null && Error "the directory already exists"
     cd $dirname
   ;;
 esac
@@ -134,4 +134,5 @@ end
     " > .gitignore
 
     echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
+    ;;
   esac
