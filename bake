@@ -3,11 +3,6 @@
 set -e
 set -o pipefail
 
-Error () {
-  echo "err: $@"
-  exit 1
-}
-
 # idk how to put this into the case such that it fits in with line 34
 dirname=$1
 
@@ -24,7 +19,8 @@ case "$1" in
       echo "Already exists in $target"
       exit 1
     fi
-    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
+
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1" | lolcat
   ;;
 
   "update")
@@ -117,4 +113,22 @@ end
 </html>' > index.erb
   echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   ;;
+
+  "node")
+    npm init
+    npm install --save express body-parser
+    echo "var express = require('express')
+    var app = express();
+    var bodyParser = require('body-parser');
+
+    var port = process.env.PORT || 8080;
+    app.listen(port);
+    " > server.js
+
+    echo "node_modules
+    package-lock.json
+    .gitignore
+    " > .gitignore
+
+    echo "\xE2\x9A\xA1 Great success!\xE2\x9A\xA1"
   esac
