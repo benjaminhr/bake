@@ -9,3 +9,4 @@
   - frontend
   - ruby
   - ruby-frontend
+  - node
