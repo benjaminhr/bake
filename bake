@@ -3,7 +3,6 @@
 set -e
 set -o pipefail
 
-# idk how to put this into the case such that it fits in with line 34
 dirname=$1
 
 case "$1" in
@@ -55,6 +54,7 @@ case "$1" in
     mkdir $dirname 2>/dev/null && Error "the directory already exists"
     cd $dirname
   ;;
+
 esac
 
 case "$2" in
