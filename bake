@@ -51,7 +51,7 @@ case "$1" in
 
   "$dirname")
     cd && cd dev
-    mkdir $dirname 2>/dev/null && Error "the directory already exists"
+    mkdir $dirname && Error "the directory already exists"
     cd $dirname
   ;;
 
