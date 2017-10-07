@@ -3,6 +3,11 @@
 set -e
 set -o pipefail
 
+Error () {
+  echo "err: $@"
+  exit 1
+}
+
 dirname=$1
 
 case "$1" in
@@ -51,7 +56,7 @@ case "$1" in
 
   "$dirname")
     cd && cd dev
-    mkdir $dirname && Error "the directory already exists"
+    mkdir $dirname 2>/dev/null || Error "the directory already exists"
     cd $dirname
   ;;
 
